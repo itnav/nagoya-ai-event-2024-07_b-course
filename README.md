@@ -1,8 +1,8 @@
 # NAGOYA TEENS AI CAMP 2024/07/13-14 B Course
 
-[講座（Zenn）](https://zenn.dev/itnav_gura/books/a7cd3d05125e01)
-
-[ホームページ](https://nt-aicamp.com)
+-   [講座（Zenn）](https://zenn.dev/itnav_gura/books/a7cd3d05125e01)
+-   [講座（Github）](https://github.com/itnav/zenn-gura)
+-   [イベントページ](https://nt-aicamp.com)
 
 <br />
 
