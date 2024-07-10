@@ -1,7 +1,10 @@
 {
     "recommendations": [
+        "MS-CEINTL.vscode-language-pack-ja",
+        "PKief.material-icon-theme",
         "Tobermory.es6-string-html",
         "esbenp.prettier-vscode",
-        "ritwickdey.LiveServer"
+        "ritwickdey.LiveServer",
+        "streetsidesoftware.code-spell-checker"
     ]
 }

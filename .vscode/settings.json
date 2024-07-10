@@ -10,6 +10,8 @@
         "source.fixAll": "explicit"
     },
 
+    "explorer.sortOrderLexicographicOptions": "unicode",
+
     "prettier.printWidth": 80,
     "prettier.tabWidth": 4,
     "prettier.useTabs": false,
