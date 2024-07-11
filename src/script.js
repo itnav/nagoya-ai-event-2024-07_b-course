@@ -1,11 +1,4 @@
-/**
- * 自分専用の ChatGPT API の API Key
- *
- * 注意: この API KEY は公開してはいけません！！
- * ローカルで起動して使用する場合は問題ないですが、Web サイトとして公開する場合などは、この処理を削除し、代わりにサーバーサイAPI を呼び出す必要があります。
- */
-const CHAT_GPT_API_KEY =
-    'sk-xxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+import { CHAT_GPT_API_KEY } from './secret.js';
 
 // フォームの要素を取得
 const recipeFormElement = document.getElementById('recipe-form');
@@ -88,7 +81,8 @@ recipeFormElement.addEventListener('submit', async (event) => {
     const recipeAnswerDescription = {
         title: '料理名を回答してください。',
         description: '料理の説明を回答してください。',
-        country: '料理が発祥した国の IOS 3166 コードを回答してください。',
+        country:
+            '料理が発祥した国の IOS 3166 コードを回答してください。（例： jp, us, in ...）',
         type: '料理の種類を回答してください。',
         time: '料理の調理時間を回答してください。',
         servings: '料理の提供人数を回答してください。',
@@ -102,13 +96,13 @@ recipeFormElement.addEventListener('submit', async (event) => {
         以下の条件から、複数の料理のレシピをなるべく多く提案してください。
         ${JSON.stringify(recipeUserInput)}
 
-        回答は以下の例の形式に従い、JSON 形式で返してください。
+        回答は以下の例の形式に従ってください。
         ${JSON.stringify([recipeAnswerExample])}
 
         回答に関する各パラメーターの説明に関しては以下の通りです。
         ${JSON.stringify(recipeAnswerDescription)}
 
-        回答は JavaScript で JSON.parse() できるようにバックティックや誤ったフォーマットを含まないシンプルな JSON 形式で返してください。
+        回答は JavaScript で JSON.parse() できるようにバックティックを含まない JSON 形式で返してください。
     `;
 
     // エラーをハンドリングする
@@ -162,7 +156,7 @@ recipeFormElement.addEventListener('submit', async (event) => {
             // prettier-ignore
             // レシピ単体の中に子要素を追加する
             recipeItemElement.innerHTML = /*html*/ `
-                <img class="recipe-item-img" src="https://flagcdn.com/${recipe.country}.svg" alt="" onerror="this.outerHTML = '<div class=\'recipe-item-img\'></div>'" />
+                <img class="recipe-item-img" src="https://flagcdn.com/${recipe.country}.svg" alt="" />
                 <div class="recipe-item-content">
                     <h2 class="recipe-item-title">${recipe.title}</h2>
                     <div class="recipe-item-type">${recipe.type}</div>
@@ -180,7 +174,7 @@ recipeFormElement.addEventListener('submit', async (event) => {
                 // モーダルの中身を置き換える
                 recipeModalElement.innerHTML = /*html*/ `
                     <div class="recipe-modal-content">
-                        <img class="recipe-modal-img" src="https://flagcdn.com/${recipe.country}.svg" alt="" onerror="this.outerHTML = '<div class=\'recipe-modal-img\'></div>'" />
+                        <img class="recipe-modal-img" src="https://flagcdn.com/${recipe.country}.svg" alt="" />
                         <h2 class="recipe-modal-title">${recipe.title}</h2>
                         <div class="recipe-modal-tags">
                             <span class="recipe-modal-tag recipe-modal-type">${recipe.type}</span>
