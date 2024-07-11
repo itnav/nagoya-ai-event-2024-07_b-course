@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>お料理レシピ作成アプリ</title>
+        <link rel="stylesheet" href="./style.css" />
+        <script type="module" src="./script.js"></script>
+    </head>
+
+    <body>
+        <main class="container">
+            <form id="recipe-form">
+                <div class="recipe-form-content">
+                    <h1 class="recipe-form-heading">お料理レシピ生成アプリ</h1>
+
+                    <span class="recipe-form-label">料理名・食材（必須）</span>
+                    <input
+                        class="recipe-form-input"
+                        name="ingredients"
+                        placeholder="例： パスタ、トマト"
+                        required
+                    />
+
+                    <span class="recipe-form-label">提供人数</span>
+                    <input
+                        class="recipe-form-input"
+                        name="servings"
+                        placeholder="例： 2人前"
+                    />
+
+                    <span class="recipe-form-label">調理時間</span>
+                    <input
+                        class="recipe-form-input"
+                        name="time"
+                        placeholder="例： 30分、サクッと"
+                    />
+
+                    <span class="recipe-form-label">調理難易度</span>
+                    <input
+                        class="recipe-form-input"
+                        name="difficulty"
+                        placeholder="例： かんたん、初級者向け、上級者向け"
+                    />
+
+                    <span class="recipe-form-label">アレルギー情報</span>
+                    <input
+                        class="recipe-form-input"
+                        name="allergies"
+                        placeholder="例： 卵、乳製品、小麦粉"
+                    />
+
+                    <span class="recipe-form-label">自由欄</span>
+                    <textarea
+                        class="recipe-form-textarea"
+                        name="notes"
+                        rows="3"
+                    ></textarea>
+
+                    <button class="recipe-form-submitter" type="submit">
+                        レシピ生成
+                    </button>
+                </div>
+            </form>
+
+            <div id="recipe-list"></div>
+
+            <div id="recipe-modal"></div>
+        </main>
+    </body>
+</html>
